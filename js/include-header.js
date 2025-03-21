@@ -13,11 +13,25 @@ document.addEventListener("DOMContentLoaded", () => {
                     <a href="index.html">eRBe</a>
                 </div>
 
+                <div class="mobile-search-trigger">
+                    <i class="fas fa-search"></i>
+                </div>
+
                 <ul class="nav-links">
+                    <div class="mobile-menu-header">
+                        <span class="logo">eRBe</span>
+                        <button class="mobile-menu-close">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="courses.html">Courses</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Contact</a></li>
+                    <div class="mobile-auth-buttons">
+                        <a href="sign-in.html" class="btn btn-outline">Sign In</a>
+                        <a href="sign-up.html" class="btn btn-primary">Sign Up</a>
+                    </div>
                 </ul>
 
                 <div class="header-right">
@@ -34,10 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         <a href="sign-in.html" class="btn btn-outline">Sign In</a>
                         <a href="sign-up.html" class="btn btn-primary">Sign Up</a>
                     </div>
-                </div>
-
-                <div class="mobile-search-trigger">
-                    <i class="fas fa-search"></i>
                 </div>
             </nav>
         </header>
@@ -60,17 +70,36 @@ document.addEventListener("DOMContentLoaded", () => {
   // Mobile menu toggle
   const hamburger = document.querySelector(".hamburger");
   const navLinks = document.querySelector(".nav-links");
+  const mobileMenuClose = document.querySelector(".mobile-menu-close");
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.add("active");
+    document.body.style.overflow = "hidden";
+  });
+
+  mobileMenuClose.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    document.body.style.overflow = "";
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener("click", (e) => {
+    if (
+      navLinks.classList.contains("active") &&
+      !navLinks.contains(e.target) &&
+      !hamburger.contains(e.target)
+    ) {
+      navLinks.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+  });
+
+  // Search functionality
   const mobileSearchTrigger = document.querySelector(".mobile-search-trigger");
   const searchContainer = document.querySelector(".search-container");
   const searchOverlay = document.querySelector(".search-overlay");
   const searchClose = document.querySelector(".search-close");
   const searchInput = document.querySelector(".search-overlay .search-input");
-
-  // Mobile menu toggle
-  hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-    hamburger.classList.toggle("active");
-  });
 
   // Search functionality
   function openSearch() {
