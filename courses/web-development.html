@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Development Course - EduLearn</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="course-styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <a href="../index.html">
+            <img src="../images/logo.png" alt="EduLearn Logo" />
+          </a>
+        </div>
+        <div class="search-container">
+          <form class="search-form" action="/search" method="GET">
+            <input
+              type="text"
+              placeholder="Search for courses..."
+              class="search-input"
+            />
+            <button type="submit" class="search-button">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+        </div>
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#courses">Courses</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+          <li class="auth-buttons">
+            <a href="#signin" class="btn btn-outline">Sign In</a>
+            <a href="#signup" class="btn btn-primary">Sign Up</a>
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Course Hero Section -->
+    <section class="course-hero">
+      <div class="course-hero-content">
+        <div class="course-info">
+          <h1>Complete Web Development Bootcamp</h1>
+          <p class="course-description">
+            Learn modern web development from scratch. Master HTML, CSS,
+            JavaScript, React, Node.js, and more. Build real-world projects and
+            launch your developer career.
+          </p>
+
+          <div class="course-meta-info">
+            <div class="meta-item">
+              <i class="fas fa-clock"></i>
+              <span>Duration: 40 hours</span>
+            </div>
+            <div class="meta-item">
+              <i class="fas fa-video"></i>
+              <span>280 Lectures</span>
+            </div>
+            <div class="meta-item">
+              <i class="fas fa-calendar-alt"></i>
+              <span>Last Updated: March 2024</span>
+            </div>
+            <div class="meta-item">
+              <i class="fas fa-user-graduate"></i>
+              <span>1,234 Students Enrolled</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Course Content Section -->
+    <div class="course-container">
+      <div class="course-main-content">
+        <!-- Instructor Info -->
+        <section class="instructor-section">
+          <h2>Your Instructor</h2>
+          <div class="instructor-info">
+            <img
+              src="../images/instructor.jpg"
+              alt="John Smith - Web Development Instructor"
+              class="instructor-image"
+            />
+            <div class="instructor-details">
+              <h3>John Smith</h3>
+              <p class="instructor-title">Senior Web Developer & Educator</p>
+              <p class="instructor-bio">
+                With over 10 years of experience in web development and
+                teaching, John has helped thousands of students launch their
+                development careers. He currently works as a senior developer at
+                Tech Corp and dedicates his time to creating comprehensive
+                learning materials.
+              </p>
+              <div class="instructor-stats">
+                <div class="stat">
+                  <i class="fas fa-star"></i>
+                  <span>4.8 Instructor Rating</span>
+                </div>
+                <div class="stat">
+                  <i class="fas fa-user-graduate"></i>
+                  <span>50,000+ Students</span>
+                </div>
+                <div class="stat">
+                  <i class="fas fa-play-circle"></i>
+                  <span>10 Courses</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Course Overview -->
+        <section class="course-overview">
+          <h2>Course Overview</h2>
+          <div class="overview-content">
+            <h3>What you'll learn</h3>
+            <ul class="learning-objectives">
+              <li>
+                <i class="fas fa-check"></i> Build responsive websites using
+                HTML5 and CSS3
+              </li>
+              <li>
+                <i class="fas fa-check"></i> Master JavaScript and modern ES6+
+                features
+              </li>
+              <li>
+                <i class="fas fa-check"></i> Create full-stack applications with
+                React and Node.js
+              </li>
+              <li><i class="fas fa-check"></i> Work with databases and APIs</li>
+              <li>
+                <i class="fas fa-check"></i> Deploy your applications to the web
+              </li>
+              <li>
+                <i class="fas fa-check"></i> Implement authentication and user
+                management
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Course Content -->
+        <section class="course-content-section">
+          <h2>Course Content</h2>
+          <div class="content-player">
+            <div class="video-container">
+              <!-- Main Video Player -->
+              <iframe
+                id="courseVideo"
+                width="100%"
+                height="500"
+                src="https://www.youtube.com/embed/PkZNo7MFNFg"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+
+          <!-- Course Playlist -->
+          <div class="course-playlist">
+            <h3>Course Modules</h3>
+            <div class="playlist-container">
+              <div class="playlist-item active" data-video="PkZNo7MFNFg">
+                <div class="video-info">
+                  <i class="fas fa-play-circle"></i>
+                  <div class="video-details">
+                    <h4>1. Introduction to Web Development</h4>
+                    <span>15:30</span>
+                  </div>
+                </div>
+              </div>
+              <div class="playlist-item" data-video="1PnVor36_40">
+                <div class="video-info">
+                  <i class="fas fa-play-circle"></i>
+                  <div class="video-details">
+                    <h4>2. HTML Fundamentals</h4>
+                    <span>20:45</span>
+                  </div>
+                </div>
+              </div>
+              <div class="playlist-item" data-video="1Rs2ND1ryYc">
+                <div class="video-info">
+                  <i class="fas fa-play-circle"></i>
+                  <div class="video-details">
+                    <h4>3. CSS Basics</h4>
+                    <span>25:15</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Add more playlist items as needed -->
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Course Sidebar -->
+      <div class="course-sidebar">
+        <div class="course-card">
+          <div class="course-price">
+            <h3>$99.99</h3>
+            <a href="#enroll" class="btn btn-primary btn-large">Enroll Now</a>
+          </div>
+          <div class="course-features">
+            <h4>This course includes:</h4>
+            <ul>
+              <li><i class="fas fa-video"></i> 40 hours of video</li>
+              <li><i class="fas fa-file"></i> 75 downloadable resources</li>
+              <li><i class="fas fa-infinity"></i> Full lifetime access</li>
+              <li><i class="fas fa-mobile-alt"></i> Access on mobile and TV</li>
+              <li>
+                <i class="fas fa-certificate"></i> Certificate of completion
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+      <!-- Same footer as main page -->
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Us</h3>
+          <p>
+            EduLearn is your gateway to quality education. We believe in making
+            education accessible to everyone, anywhere.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <ul class="contact-info">
+            <li><i class="fas fa-envelope"></i> info@edulearn.com</li>
+            <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+            <li>
+              <i class="fas fa-map-marker-alt"></i> 123 Education St, City
+            </li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 EduLearn. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">Terms of Service</a>
+          <a href="#cookies">Cookie Policy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="course-script.js"></script>
+  </body>
+</html>

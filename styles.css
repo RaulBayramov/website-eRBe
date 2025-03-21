@@ -1,0 +1,634 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #2563eb;
+  --secondary-color: #1e40af;
+  --accent-color: #3b82f6;
+  --text-color: #1f2937;
+  --light-text: #6b7280;
+  --background-color: #ffffff;
+  --light-background: #f3f4f6;
+  --border-color: #e5e7eb;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+/* Header Styles */
+header {
+  background-color: var(--primary-color);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 72px;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 0.5rem;
+  transition: opacity 0.3s ease;
+}
+
+.logo a:hover {
+  opacity: 0.9;
+}
+
+/* Style for 'e' and 'e' in eRBe */
+.logo a::first-letter,
+.logo a::last-letter {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+/* Style for 'RB' in eRBe */
+.logo a span {
+  font-weight: 800;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+  opacity: 0.8;
+}
+
+/* Right Section */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Search Container */
+.search-container {
+  position: relative;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+.search-input {
+  border: none;
+  background: none;
+  padding: 0.25rem 0.5rem;
+  width: 200px;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: var(--light-text);
+}
+
+.search-button {
+  background: none;
+  border: none;
+  color: var(--light-text);
+  padding: 0.25rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.search-close {
+  display: none;
+}
+
+/* Auth Buttons */
+.auth-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-outline {
+  border: 1px solid white;
+  color: white;
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-primary {
+  background: white;
+  color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* Mobile Controls */
+.mobile-search-trigger,
+.hamburger {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 1rem 2rem;
+  }
+
+  .search-input {
+    width: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .header-right {
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: var(--primary-color);
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .mobile-search-trigger {
+    position: absolute;
+    right: 1rem;
+    color: white;
+  }
+
+  .mobile-search-trigger,
+  .hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    padding: 0.5rem;
+  }
+
+  .hamburger {
+    flex-direction: column;
+    gap: 4px;
+    position: absolute;
+    left: 1rem;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: white;
+    transition: all 0.3s ease;
+  }
+
+  .logo {
+    margin: 0 auto;
+  }
+
+  .logo a {
+    font-size: 2rem;
+  }
+
+  .search-container {
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: var(--primary-color);
+  }
+
+  .search-container.active {
+    display: block;
+  }
+
+  .search-form {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .search-input {
+    width: 100%;
+    padding: 0.5rem 2.5rem;
+  }
+
+  .search-button {
+    position: absolute;
+    left: 0.5rem;
+    padding: 0.5rem;
+    color: var(--light-text);
+  }
+
+  .search-close {
+    display: block;
+    position: absolute;
+    right: 0.5rem;
+    padding: 0.5rem;
+    background: none;
+    border: none;
+    color: var(--light-text);
+    cursor: pointer;
+  }
+
+  .auth-buttons {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .auth-buttons .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Hamburger Animation */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Search Expansion Animation */
+@media (min-width: 769px) {
+  .search-container.expanded {
+    flex: 1;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-container.expanded {
+    flex: 1;
+  }
+}
+
+/* Add margin to main content to account for fixed header */
+main {
+  margin-top: 72px;
+  min-height: calc(100vh - 72px);
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(rgba(37, 99, 235, 0.9), rgba(30, 64, 175, 0.9));
+  color: white;
+  padding: 8rem 5% 4rem;
+  text-align: center;
+  margin-top: 72px;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.hero-buttons .btn-outline {
+  border: 2px solid white;
+  color: white;
+}
+
+.hero-buttons .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.hero-buttons .btn-primary {
+  background: white;
+  color: var(--primary-color);
+}
+
+.hero-buttons .btn-primary:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* Popular Courses Section */
+.popular-courses {
+  padding: 4rem 5%;
+  background: var(--light-background);
+}
+
+.popular-courses h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--text-color);
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.course-card {
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+}
+
+.course-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.course-content {
+  padding: 1.5rem;
+}
+
+.course-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.course-content p {
+  color: var(--light-text);
+  margin-bottom: 1rem;
+}
+
+.course-meta {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+  color: var(--light-text);
+  font-size: 0.9rem;
+}
+
+.course-meta i {
+  margin-right: 0.5rem;
+  color: var(--primary-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .popular-courses h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Courses Hero Section */
+.courses-hero {
+  margin-top: 72px;
+  padding: 4rem 5% 2rem;
+  background: linear-gradient(rgba(37, 99, 235, 0.9), rgba(30, 64, 175, 0.9));
+  color: white;
+  text-align: center;
+}
+
+.courses-hero .hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.courses-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.courses-hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+/* Button Styles */
+.btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color);
+}
+
+.btn-outline {
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-secondary {
+  background-color: var(--light-background);
+  color: var(--text-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--border-color);
+}
+
+/* Footer Styles */
+footer {
+  background-color: var(--text-color);
+  color: white;
+  padding: 4rem 5% 2rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section h3 {
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-section a {
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: white;
+}
+
+.contact-info li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--accent-color);
+}
+
+.footer-bottom {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+}
+
+/* Mobile Navigation */
+.mobile-controls {
+  display: none;
+  align-items: center;
+  gap: 1rem;
+}

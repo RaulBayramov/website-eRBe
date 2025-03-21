@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Courses - eRBe Learning Platform</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div id="header-container"></div>
+
+    <main>
+      <section class="courses-hero">
+        <div class="hero-content">
+          <h1>Explore Our Courses</h1>
+          <p>
+            Discover a world of knowledge with our comprehensive course catalog
+          </p>
+        </div>
+      </section>
+
+      <section class="filters-section">
+        <div class="filters-container">
+          <div class="filter-group">
+            <label for="category">Category</label>
+            <select id="category">
+              <option value="">All Categories</option>
+              <option value="web-development">Web Development</option>
+              <option value="data-science">Data Science</option>
+              <option value="design">Design</option>
+              <option value="business">Business</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="level">Level</label>
+            <select id="level">
+              <option value="">All Levels</option>
+              <option value="beginner">Beginner</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="advanced">Advanced</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="duration">Duration</label>
+            <select id="duration">
+              <option value="">Any Duration</option>
+              <option value="0-2">0-2 Hours</option>
+              <option value="2-5">2-5 Hours</option>
+              <option value="5-10">5-10 Hours</option>
+              <option value="10+">10+ Hours</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <section class="courses-grid">
+        <div class="course-grid">
+          <!-- Course Cards -->
+          <div class="course-card">
+            <img
+              src="images/web-development.jpg"
+              alt="Web Development Course"
+            />
+            <div class="course-content">
+              <h3>Modern Web Development</h3>
+              <p>
+                Learn the latest web technologies and build responsive websites
+              </p>
+              <div class="course-meta">
+                <span><i class="fas fa-clock"></i>8 Hours</span>
+                <span><i class="fas fa-signal"></i>Intermediate</span>
+                <span><i class="fas fa-user-graduate"></i>2.5k Students</span>
+              </div>
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+
+          <div class="course-card">
+            <img src="images/data-science.jpg" alt="Data Science Course" />
+            <div class="course-content">
+              <h3>Data Science Fundamentals</h3>
+              <p>Master the basics of data analysis and machine learning</p>
+              <div class="course-meta">
+                <span><i class="fas fa-clock"></i>12 Hours</span>
+                <span><i class="fas fa-signal"></i>Beginner</span>
+                <span><i class="fas fa-user-graduate"></i>1.8k Students</span>
+              </div>
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+
+          <div class="course-card">
+            <img
+              src="images/digital-marketing.jpg"
+              alt="Digital Marketing Course"
+            />
+            <div class="course-content">
+              <h3>Digital Marketing Strategy</h3>
+              <p>Learn to create and execute effective marketing campaigns</p>
+              <div class="course-meta">
+                <span><i class="fas fa-clock"></i>6 Hours</span>
+                <span><i class="fas fa-signal"></i>Intermediate</span>
+                <span><i class="fas fa-user-graduate"></i>3.2k Students</span>
+              </div>
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+
+          <div class="course-card">
+            <img src="images/uiux-design.webp" alt="UI/UX Design Course" />
+            <div class="course-content">
+              <h3>UI/UX Design Principles</h3>
+              <p>Create beautiful and user-friendly interfaces</p>
+              <div class="course-meta">
+                <span><i class="fas fa-clock"></i>10 Hours</span>
+                <span><i class="fas fa-signal"></i>Advanced</span>
+                <span><i class="fas fa-user-graduate"></i>1.5k Students</span>
+              </div>
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+          <a href="#" class="btn btn-outline"
+            ><i class="fas fa-chevron-left"></i> Previous</a
+          >
+          <div class="page-numbers">
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+          </div>
+          <a href="#" class="btn btn-outline"
+            >Next <i class="fas fa-chevron-right"></i
+          ></a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Us</h3>
+          <p>
+            eRBe is a leading online learning platform helping students master
+            new skills and achieve their goals.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Info</h3>
+          <div class="contact-info">
+            <p><i class="fas fa-envelope"></i> info@erbe.com</p>
+            <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> 123 Learning Street,
+              Education City
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 eRBe Learning Platform. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/include-header.js"></script>
+  </body>
+</html>
