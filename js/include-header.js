@@ -41,6 +41,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             </nav>
         </header>
+
+        <div class="search-overlay">
+            <form class="search-form">
+                <button type="submit" class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+                <input type="text" class="search-input" placeholder="Search for anything">
+                <button type="button" class="search-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </form>
+        </div>
     `;
 
   headerContainer.innerHTML = headerHTML;
@@ -50,36 +62,65 @@ document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelector(".nav-links");
   const mobileSearchTrigger = document.querySelector(".mobile-search-trigger");
   const searchContainer = document.querySelector(".search-container");
+  const searchOverlay = document.querySelector(".search-overlay");
+  const searchClose = document.querySelector(".search-close");
+  const searchInput = document.querySelector(".search-overlay .search-input");
 
-  if (hamburger && navLinks) {
-    hamburger.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-      if (searchContainer.classList.contains("active")) {
-        searchContainer.classList.remove("active");
-      }
-    });
-  }
+  // Mobile menu toggle
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    hamburger.classList.toggle("active");
+  });
 
-  if (mobileSearchTrigger && searchContainer) {
-    mobileSearchTrigger.addEventListener("click", () => {
-      searchContainer.classList.toggle("active");
-      if (navLinks.classList.contains("active")) {
-        navLinks.classList.remove("active");
-      }
-    });
-  }
-
-  // Close mobile menu and search when clicking outside
-  document.addEventListener("click", (e) => {
-    if (!e.target.closest(".nav-links") && !e.target.closest(".hamburger")) {
-      navLinks?.classList.remove("active");
+  // Search functionality
+  function openSearch() {
+    if (window.innerWidth <= 1024) {
+      searchOverlay.classList.add("active");
+      searchInput.focus();
+      document.body.style.overflow = "hidden";
     }
+  }
 
-    if (
-      !e.target.closest(".search-container") &&
-      !e.target.closest(".mobile-search-trigger")
-    ) {
-      searchContainer?.classList.remove("active");
+  function closeSearch() {
+    searchOverlay.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+
+  mobileSearchTrigger.addEventListener("click", openSearch);
+  searchContainer.addEventListener("click", (e) => {
+    if (window.innerWidth > 1024) {
+      e.stopPropagation(); // Prevent opening overlay on desktop
+    } else {
+      openSearch();
+    }
+  });
+  searchClose.addEventListener("click", closeSearch);
+
+  // Close search on form submit
+  const searchForm = document.querySelector(".search-overlay .search-form");
+  searchForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    closeSearch();
+  });
+
+  // Close search on escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && searchOverlay.classList.contains("active")) {
+      closeSearch();
+    }
+  });
+
+  // Close search when clicking outside
+  searchOverlay.addEventListener("click", (e) => {
+    if (e.target === searchOverlay) {
+      closeSearch();
+    }
+  });
+
+  // Handle window resize
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 1024) {
+      navbar.classList.remove("search-active");
     }
   });
 });

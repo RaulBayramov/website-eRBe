@@ -168,6 +168,85 @@ header {
   opacity: 1;
 }
 
+/* Full screen search overlay - Only for mobile */
+@media (max-width: 1024px) {
+  .search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 1000;
+    display: none;
+    padding: 1rem;
+  }
+
+  .search-overlay.active {
+    display: block;
+  }
+
+  .search-overlay .search-form {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+    border-radius: 0;
+    padding: 1rem 0;
+    position: relative;
+  }
+
+  .search-overlay .search-input {
+    width: 100%;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    padding: 0.5rem 2.5rem;
+  }
+
+  .search-overlay .search-input::placeholder {
+    color: #9ca3af;
+  }
+
+  .search-overlay .search-button {
+    position: absolute;
+    left: 0;
+    color: #6b7280;
+  }
+
+  .search-overlay .search-close {
+    position: absolute;
+    right: 0;
+    background: none;
+    border: none;
+    color: #6b7280;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .search-overlay .search-close:hover {
+    color: var(--text-color);
+  }
+}
+
+/* Desktop search hover effect */
+@media (min-width: 1025px) {
+  .search-form {
+    transition: background-color 0.3s ease;
+  }
+
+  .search-form:hover,
+  .search-form:focus-within {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .search-overlay {
+    display: none !important;
+  }
+}
+
 /* Mobile Controls */
 .mobile-search-trigger,
 .hamburger {
@@ -235,40 +314,8 @@ header {
     display: none;
   }
 
-  .auth-buttons {
-    flex-direction: column;
-    width: 100%;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
-  }
-
-  .auth-buttons .btn {
-    width: 100%;
-    min-width: unset;
-    padding: 0.75rem;
-  }
-
   .search-container {
     display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    padding: 1rem;
-    background-color: var(--primary-color);
-    z-index: 1000;
-  }
-
-  .search-container.active {
-    display: block;
-  }
-
-  .search-form {
-    width: 100%;
-  }
-
-  .search-input {
-    width: 100%;
   }
 }
 
