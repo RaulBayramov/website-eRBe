@@ -74,6 +74,22 @@ header {
   text-decoration: none;
 }
 
+/* Logo styles for larger screens */
+@media (min-width: 1025px) {
+  .logo {
+    padding: 0.5rem 0;
+    margin-right: 2rem;
+  }
+
+  .logo a {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 0.5rem;
+  }
+}
+
 .nav-links {
   display: flex;
   gap: 2rem;
@@ -97,6 +113,18 @@ header {
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+/* Auth Buttons */
+.auth-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.auth-buttons .btn {
+  white-space: nowrap;
+  min-width: 100px;
+  text-align: center;
 }
 
 /* Search Container */
@@ -152,9 +180,10 @@ header {
 }
 
 /* Mobile Styles */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .navbar {
     grid-template-columns: 1fr;
+    padding: 0.5rem 1rem;
   }
 
   .mobile-search-trigger,
@@ -206,6 +235,19 @@ header {
     display: none;
   }
 
+  .auth-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .auth-buttons .btn {
+    width: 100%;
+    min-width: unset;
+    padding: 0.75rem;
+  }
+
   .search-container {
     display: none;
     position: absolute;
@@ -227,6 +269,18 @@ header {
 
   .search-input {
     width: 100%;
+  }
+}
+
+/* Responsive breakpoint for medium screens */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .auth-buttons {
+    gap: 0.5rem;
+  }
+
+  .auth-buttons .btn {
+    padding: 0.5rem 1rem;
+    min-width: 80px;
   }
 }
 
